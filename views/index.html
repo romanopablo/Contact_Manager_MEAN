@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="agenda">
+<head>
+    <meta charset="utf-8">
+    <title>Mansa Agenda</title>
+
+    <!-- AngularJS -->
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.1.js"></script>
+
+    <!-- Bootstrap CSS Y JS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- JS -->
+    <script src="agenda.js"></script>
+    <script src="servicioPersonas.js"></script>
+    <script src="factory.js"></script>
+    <script src="filters.js"></script>
+    <script src="directivaAgregar.js"></script>
+</head>
+
+<body background="css/bg-9-full.jpg" style="padding-top: 70px; ">
+
+<div ng-controller="AgendaController">
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <ul>
+            <a class="navbar-brand" href="/#/"> HOME</a>
+            <a class="navbar-brand" href="/#/agregar"> AGREGAR</a>
+            <a class="navbar-brand" href="/#/ver"> VER </a>
+            </ul>
+        </nav>
+    </header>
+    <ng-view> </ng-view>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+
+<table ng-init="loadPersonas();" class="table  table-bordered table-hover" style="background-color:#fffaf0" ng-show="personas.length >= 1" >
+
+
+    <h3><span ng-if="personas.length == 0">No hay contactos.</span></h3>
+    <h3><span ng-if="personas.length == 1">Hay {{ personas.length }} contacto.</span></h3>
+    <h3><span ng-if="personas.length > 1">Hay {{ personas.length }} contactos.</span></h3>
+
+    <thead>
+    <tr class="info">
+        <!--<th>id</th>-->
+        <th><h4>Nombre</h4></th>
+        <th><h4>Mail</h4></th>
+        <th><h4>Teléfono</h4></th>
+        <th><h4>Acción</h4></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="persona in personas">
+        <th>{{persona.name}}</th>
+        <th>{{persona.email}}</th>
+        <th>{{persona.phone | tel}}</th>
+        <th class="col-md-2">
+            <a class="btn btn-warning" href="/#/agregar" ng-click="editarPersona(persona)"><i class="glyphicon-pencil glyphicon"></i> Editar</a>
+            <a class="btn btn-danger" href="/#/ver" ng-click="eliminarPersona(persona._id)"><i class="glyphicon-trash glyphicon"></i> Eliminar</a>
+        </th>
+    </tr>
+    </tbody>
+</table>
